@@ -1,0 +1,181 @@
+package javaMiniProj;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
+
+public class EmployeeForm extends EmployeeView {
+
+	static JFrame frame;
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				// JFrame.setDefaultLookAndFeelDecorated(true);
+				displayEmployeeForm();
+				frame.setBounds(500, 200, 300, 300);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+			}
+		});
+	}
+
+	static void displayEmployeeForm() {
+		frame = new JFrame("Add Employee Form");
+		frame.setPreferredSize(new Dimension(900, 200));
+
+		setBorder(new EmptyBorder(200, 200, 200, 200));
+		setLayout(new GridBagLayout());
+
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.gridwidth = GridBagConstraints.REMAINDER;
+		gbc.anchor = GridBagConstraints.NORTH;
+
+		add(new JLabel("<html><h1><strong><i>Create Employee Form</i></strong></h1><hr></html>"), gbc);
+
+		gbc.anchor = GridBagConstraints.CENTER;
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+
+		// GridBagConstraints gbc = new GridBagConstraints();
+		// gbc.gridwidth = GridBagConstraints.REMAINDER;
+		// gbc.anchor = GridBagConstraints.NORTH;
+		// gbc.anchor = GridBagConstraints.CENTER;
+		// gbc.fill = GridBagConstraints.HORIZONTAL;
+
+		JTextArea employeeNumber = new JTextArea();
+		employeeNumber.setLocation(50, 30);
+		employeeNumber.setWrapStyleWord(true);
+		employeeNumber.setEditable(true);
+		employeeNumber.setWrapStyleWord(true);
+		employeeNumber.addMouseListener(null);
+		employeeNumber.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeeType = new JTextArea();
+		employeeType.setLocation(70, 50);
+		employeeType.setWrapStyleWord(true);
+		employeeType.setEditable(true);
+		employeeType.setWrapStyleWord(true);
+		employeeType.addMouseListener(null);
+		employeeType.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeeName = new JTextArea();
+		employeeName.setLocation(90, 70);
+		employeeName.setWrapStyleWord(true);
+		employeeName.setEditable(true);
+		employeeName.setWrapStyleWord(true);
+		employeeName.addMouseListener(null);
+		employeeName.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeeContact = new JTextArea();
+		employeeContact.setLocation(110, 90);
+		employeeContact.setWrapStyleWord(true);
+		employeeContact.setEditable(true);
+		employeeContact.setWrapStyleWord(true);
+		employeeContact.addMouseListener(null);
+		employeeContact.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeeBU = new JTextArea();
+		employeeBU.setLocation(130, 110);
+		employeeBU.setWrapStyleWord(true);
+		employeeBU.setEditable(true);
+		employeeBU.setWrapStyleWord(true);
+		employeeBU.addMouseListener(null);
+		employeeBU.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeePenalty = new JTextArea();
+		employeePenalty.setLocation(150, 130);
+		employeePenalty.setWrapStyleWord(true);
+		employeePenalty.setEditable(true);
+		employeePenalty.setWrapStyleWord(true);
+		employeePenalty.addMouseListener(null);
+		employeePenalty.setPreferredSize(new Dimension(150, 30));
+
+		JTextArea employeeBorrowed = new JTextArea();
+		employeeBorrowed.setLocation(170, 160);
+		employeeBorrowed.setWrapStyleWord(true);
+		employeeBorrowed.setEditable(true);
+		employeeBorrowed.setWrapStyleWord(true);
+		employeeBorrowed.addMouseListener(null);
+		employeeBorrowed.setPreferredSize(new Dimension(150, 30));
+
+		JLabel label1 = new JLabel("Create Employee Form ");
+		JLabel label2 = new JLabel("Employee Number: ");
+		JLabel label3 = new JLabel("Employee Type: ");
+		JLabel label4 = new JLabel("Employee Name: ");
+		JLabel label5 = new JLabel("Employee Contact Number: ");
+		JLabel label6 = new JLabel("Employee BU: ");
+		JLabel label7 = new JLabel("Penalty: ");
+		JLabel label8 = new JLabel("Borrowed Item/s: ");
+
+		JButton exitButton = new JButton("Exit");
+		exitButton.getDisabledSelectedIcon();
+		JButton submitForm = new JButton("Submit");
+		submitForm.setPreferredSize(new Dimension(100, 30));
+		submitForm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// JDialog d = new JDialog(frame, "Message", true);
+				// JDialog.setDefaultLookAndFeelDecorated(true);
+				int response = JOptionPane.showConfirmDialog(null, "Do you want to save information?", "Confirm",
+						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if (response == JOptionPane.NO_OPTION) {
+					System.out.println("No button clicked");
+				} else if (response == JOptionPane.YES_OPTION) {
+					String = employeeNumber.getText();
+					System.out.println("Yes button clicked");
+				} else if (response == JOptionPane.CLOSED_OPTION) {
+					System.out.println("JOptionPane closed");
+				}
+				// d.setSize(300, 250);
+				// d.setLocationRelativeTo(frame);
+				// d.setVisible(true);
+			}
+
+		});
+
+		frame.getContentPane().setLayout(new FlowLayout());
+		frame.add(label1, gbc);
+		frame.add(label2, gbc);
+		frame.add(EmployeeNumber, gbc);
+		frame.add(label3, gbc);
+		frame.add(EmployeeType, gbc);
+		frame.add(label4, gbc);
+		frame.add(EmployeeName, gbc);
+		frame.add(label5, gbc);
+		frame.add(EmployeeContact, gbc);
+		frame.add(label6, gbc);
+		frame.add(EmployeeBU, gbc);
+		frame.add(label7, gbc);
+		frame.add(EmployeePenalty, gbc);
+		frame.add(label8, gbc);
+		frame.add(EmployeeBorrowed, gbc);
+		frame.add(submitForm);
+		frame.add(exitButton);
+
+	}
+
+	private static void add(JLabel jLabel, GridBagConstraints gbc) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void setLayout(GridBagLayout gridBagLayout) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static void setBorder(EmptyBorder emptyBorder) {
+		// TODO Auto-generated method stub
+
+	}
+}

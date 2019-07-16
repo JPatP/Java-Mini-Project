@@ -1,11 +1,9 @@
-import view.employee.EmployeeView;
-import view.main.MainView;
+import controller.employee.EmployeeController;
 
 public class Tester {
 
-    public static void main(String[] args) {
-
-        new EmployeeView();
-
-    }
+	public static void main(String[] args) {
+		EmployeeController empController = new EmployeeController();
+		empController.init();
+	}
 }

@@ -72,7 +72,7 @@ public class EmployeeView {
 		// Upper panel attributes
 		JLabel jLabel = new JLabel("Search: ");
 
-		JTextField jTextField = new JTextField(" ");
+		JTextField jTextField = new JTextField("");
 		jTextField.setPreferredSize(new Dimension(150, 30));
 
 		JButton btn = new JButton("Search");
@@ -92,11 +92,18 @@ public class EmployeeView {
 				}
 			}
 		});
-
+		// ADD
+		JButton btnAdd = new JButton("Add User");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new AddEmployee();
+			}
+		});
 		panelSouth.add(pane, BorderLayout.SOUTH);
 		panelNorth.add(jLabel);
 		panelNorth.add(jTextField);
 		panelNorth.add(btn);
+		panelNorth.add(btnAdd);
 
 		frame.add(panelSouth);
 		frame.setContentPane(panelSouth);

@@ -12,7 +12,7 @@ import view.employee.EmployeeView;
  * CONTROLLER FOR 1 ARRAYLIST EMPLOYEES
  */
 public class EmployeeController {
-	static ArrayList<EmployeeModel> employee = new ArrayList<EmployeeModel>();
+	public static ArrayList<EmployeeModel> employee = new ArrayList<EmployeeModel>();
 
 	String[] columnNames = { "Employee No.", "Employee Type", "Name", "Contact No.", "Business Unit", "Total Penalty",
 			"Items Borrowed" };
@@ -31,9 +31,24 @@ public class EmployeeController {
 		employee.add(new Engineer(8, "Engineer", "Shirley", "09456634423", "Dev 2", 0, 0));
 		employee.add(new Engineer(9, "Engineer", "Glaiza", "09274450987", "Dev K", 0, 0));
 		employee.add(new Engineer(10, "Engineer", "Gzelly Joy", "09172425587", "Dev A", 0, 0));
-
 		EmployeeView empView = new EmployeeView();
 		empView.createGUI(employee, columnNames);
+
+	}
+
+	public void addEmp(String strEmpNumber, String strEmpType, String strEmpName, String strEmpCnt, String strEmpBU,
+			String strEmpPenalty, String strEmpBorrow) {
+		System.out.println("Inside print addemp before try");
+		try {
+			System.out.println("Inside print addemp inside try");
+			employee.add(new Trainee(Integer.parseInt(strEmpNumber), strEmpType, strEmpName, strEmpCnt, strEmpBU,
+					Integer.parseInt(strEmpPenalty), Integer.parseInt(strEmpBorrow)));
+
+		} catch (Exception e) {
+			System.out.println("Inside print addemp inside catch");
+			e.printStackTrace();
+
+		}
 
 	}
 
